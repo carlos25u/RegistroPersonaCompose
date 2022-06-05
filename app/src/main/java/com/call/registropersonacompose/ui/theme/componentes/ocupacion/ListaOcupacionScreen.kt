@@ -47,7 +47,8 @@ fun ListaOcupacionScreen(goToRegistroOcupaciones:() -> Unit, viewModel: Ocupacio
             LazyColumn(modifier = Modifier.fillMaxWidth()){
                 items(listaOcupaciones.value){ ocupacion ->
                     Row() {
-                        Text(text = "${ocupacion.nombres}")
+                        Text(text = "${ocupacion.ocupacionId}\t\t\t " +
+                                "${ocupacion.nombres}")
                     }
                 }
             }

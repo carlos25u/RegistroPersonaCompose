@@ -12,13 +12,18 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.call.registropersonacompose.view.OcupacionViewModel
 import com.call.registropersonacompose.view.PersonaViewModel
+import androidx.navigation.NavHostController
+import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
-fun ListadoPersonasScreen(goRegistroPersonas:() -> Unit, goListaOcupaciones:() -> Unit, viewModel: PersonaViewModel = hiltViewModel()){
+fun ListadoPersonasScreen(goRegistroPersonas:() -> Unit, goListaOcupaciones:() -> Unit,
+    viewModel: PersonaViewModel = hiltViewModel()){
+
     val ScaffoldState = rememberScaffoldState()
 
     Scaffold(
@@ -55,10 +60,14 @@ fun ListadoPersonasScreen(goRegistroPersonas:() -> Unit, goListaOcupaciones:() -
             ){
                 items(listaPersonas.value) { persons ->
                     Row() {
-                        Text(text = "${persons.nombres}")
+                        Text(text = "${persons.personaId}\t\t\t " +
+                                "${persons.nombres}\t\t\t " +
+                                "${persons.email}\t\t\t " +
+                                "${persons.salario}")
                     }
                 }
             }
         }
     }
 }
+

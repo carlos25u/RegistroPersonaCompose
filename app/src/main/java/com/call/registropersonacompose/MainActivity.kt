@@ -30,7 +30,9 @@ import com.call.registropersonacompose.ui.theme.componentes.ListadoPersonasScree
 import com.call.registropersonacompose.ui.theme.componentes.RegistroPersonasScreen
 import com.call.registropersonacompose.ui.theme.componentes.registrosOcupacionScreen
 import com.call.registropersonacompose.util.Screen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

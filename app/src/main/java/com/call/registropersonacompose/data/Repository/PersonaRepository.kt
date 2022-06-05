@@ -20,10 +20,10 @@ class PersonaRepository @Inject constructor(
 
 
     fun buscar(personaId: Int): Flow<Persona> {
-        return   personaDao.buscar(personaId)
+        return  personaDao.buscar(personaId)
     }
 
     fun getList(): Flow<List<Persona>> {
-        return  personaDao.getList()
+        return personaDao.getList()
     }
 }
